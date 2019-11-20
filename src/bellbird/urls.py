@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from chirp.views import home_view, chirp_create_view
+
 urlpatterns = [
+    path('', home_view, name='home'),
+    path('index/', home_view, name='home'),
+    path('create/', chirp_create_view, name='create'),
     path('admin/', admin.site.urls),
 ]

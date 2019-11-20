@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+.chirps {
+  text-transform: uppercase;
+}
+</style>
+
+<h1>Chirps</h1>
+
+<ul>
+{% for chirp in chirps reversed %}
+  <li class="chirps">{{ chirp.id }} -- {{ chirp.text }}</li>
+  <p>Upvotes: {{ chirp.upvotes }}</p>
+{% endfor %}
+</ul>
+
+{% endblock %}
+
